@@ -53,7 +53,7 @@ export default function ModalCreateEdit (props) {
         }
         
     }
-    //console.log("active",activeNote)
+
 
     const addTag =(e) =>{
 
@@ -177,10 +177,10 @@ export default function ModalCreateEdit (props) {
                         {props.note ? 
                             <Grid item xs={10}>
                                 <div className="tags-input-container">
-                                {console.log("tags",tagsUpdated)}
+                                
                                 { tagsUpdated.category?.map((tag, index) => (
                                     <div className="tag-item" key={index}>
-                                            {console.log("name",tag.name)}
+                                            
                                             <span  className="text">{tag.name}</span>
                                             <span className="close" onClick={() => removeTag(index)}>&times;</span>
                                        

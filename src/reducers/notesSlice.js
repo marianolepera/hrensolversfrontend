@@ -146,7 +146,6 @@ export const updateArchiveToTrueOrFalse = createAsyncThunk(
         .addCase(createNote.fulfilled, (state, action) => {
           state.isLoading = false
           state.isSuccess = true
-          console.log("create notes",action.payload)
           state.notes.push(action.payload)
         })
         .addCase(createNote.rejected, (state, action) => {
@@ -160,7 +159,6 @@ export const updateArchiveToTrueOrFalse = createAsyncThunk(
         .addCase(updateNote.fulfilled, (state, action) => {
           state.isLoading = false
           state.isSuccess = true
-          console.log("action update",action.payload)
           state.notes = state.notes.map( note => {
 
             if ( note.id === action.payload._id ) {
@@ -173,7 +171,6 @@ export const updateArchiveToTrueOrFalse = createAsyncThunk(
         .addCase(updateNote.rejected, (state, action) => {
           state.isLoading = false
           state.isError = true
-          console.log("action update error",action.payload)
           state.message = action.payload
         })
         .addCase(updateArchiveToTrueOrFalse.pending, (state) => {
