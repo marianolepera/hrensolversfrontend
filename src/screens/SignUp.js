@@ -3,7 +3,6 @@ import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
-import Link from '@material-ui/core/Link';
 import Paper from '@material-ui/core/Paper';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
@@ -16,6 +15,7 @@ import { login, register, reset } from '../reducers/authSlice'
 import { useSelector, useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom';
 import Spinner from "../components/Spinner"
+import { Link } from 'react-router-dom';
 
 
 
@@ -175,8 +175,16 @@ export default function Login(props) {
               color="primary"
               className={classes.submit}
             >
-              Sign In
+              Sign Up
             </Button>
+            <Grid container>
+              
+              <Grid item>
+                <Link to="/login" variant="body2">
+                  {"Already have an account? Log in"}
+                </Link>
+              </Grid>
+            </Grid>
             <Box mt={2}>
               <Copyright />
             </Box>

@@ -4,7 +4,7 @@ import axios from 'axios'
 // Register user
 const register = async (userData) => {
   
-  const response = await axios.post("http://localhost:4000/api/auth/signup", userData)
+  const response = await axios.post("https://hr-ensolvers.herokuapp.com/api/auth/signup", userData)
 
   if (response.data) {
     localStorage.setItem('user', JSON.stringify(response.data.token))
@@ -15,7 +15,7 @@ const register = async (userData) => {
 
 // Login user
 const login = async (userData) => {
-  const response = await axios.post("http://localhost:4000/api/auth/login", userData)
+  const response = await axios.post("https://hr-ensolvers.herokuapp.com/api/auth/login", userData)
 
   if (response.data) {
     localStorage.setItem('user', JSON.stringify(response.data.token))
